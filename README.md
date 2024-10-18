@@ -1,12 +1,9 @@
 ## CLUSTERING PROGRAM FOR SMALL DATA
 
-Hey there, 
-You're on my project. This project helped me to master python, data structures & algo in Python and more.
+Hello, you are on my project. This project helped me master Python, data structures and algorithms in Python and more.
 
-A little history ?
-It was my teacher at school teach me a clustering problem in AI. 
-And for master the concept behind this problem 'clustering', the asked us to calculate using the theory that she gave us during the course. And, it will be considered like a exam.
-And because "I'm so lazy" yeahh that's right. You read it corretly, because I'm a lazy guy I decide work on this project.
+A little history? It was my teacher at school who taught us the problem of clustering in AI. And to master the concept behind this “clustering” problem, she asked us to calculate using the theory she gave us during the course. And this will be considered an exam. And because "I'm so lazy", yeah, it's true. You read it right, because I'm a lazy guy, I decided to work on this project.
 
-And I faced some challenges...
-When I got the idea, i thought that will be so easy...but it defintly not the case because I review some python core foundation to do this project.
+And I faced some challenges... When I had the idea, I thought it would be so simple... but it's definitely not the case because I revised a base of Python base to carry out this project.
+
+# Christ Chadrak MVOUNGOU.
