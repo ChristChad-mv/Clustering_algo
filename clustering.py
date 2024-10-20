@@ -48,3 +48,37 @@ def data_normalization(list_coord_x, list_coord_y):
     liste_coord_y_normalized = (list_coord_y_array - np.mean(list_coord_y_array)) / np.std(list_coord_y_array)
 
     return liste_coord_x_normalized, liste_coord_y_normalized
+
+"""
+@ Params
+1. numbers of centroids -> It's for the initial centroids entered by the user
+2. coord_x_norm and coord_y_norm are the coordinates x and y normalized by the function data_normalizaion
+3. coordinate_x, coordinate_y are t
+
+
+# Output -> We want here to have the centroids normalized and non-normalized
+
+"""
+
+def having_centroids(number_of_centroids, coord_x_norm, coord_y_norm, coordinates_x, coordinates_y):
+  centroids_norm = []
+  centroids = []
+
+  for i in range(1, number_of_centroids + 1):
+    while True: 
+      centroide = input(f"Enter the centroid {i} (e.g A1, A3, A8) :")
+
+      # The number of centroids enter by the user must be less than the total number of all points entered
+      # We get just the second element because if the user enter A1 we just want to have the 1
+
+      index = int(centroide[1:])
+
+      if index > len(coord_x_norm):
+        print(f"Invalid number ! You can only use the centroids in range from 1 to the number of points entered at the start")
+      else :
+        centroids_norm.append({"x": coord_x_norm[index - 1], "y": coord_y_norm[index - 1]})
+        centroids.append({ "x": coordinates_x[index - 1], "y": coordinates_y[index - 1] })
+        # We use index - 1 because we want to have the correct coordinates of the points.
+        # If the user enter 1 but we'll start the count by 0
+        break
+    return centroids, centroids_norm
