@@ -82,3 +82,11 @@ def having_centroids(number_of_centroids, coord_x_norm, coord_y_norm, coordinate
         # If the user enter 1 but we'll start the count by 0
         break
     return centroids, centroids_norm
+
+  
+"""
+@ Params x1, x2, y1, y2 are the coordinates
+And the function will return the eucliedian distance between these points
+"""
+def calculate_euclidean_distance(x1, y1, x2, y2):
+  return np.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
