@@ -148,3 +148,8 @@ def find_news_centroids_after_grouping(group_per_centroids):
       new_centroid.append({ "x": new_centroid_x, "y": new_centroid_y })
 
   return new_centroid
+
+
+def show_centroids(centroids_norm):
+  for point, centroid in enumerate(centroids_norm):
+    print(f"{centroid['x'], centroid['y']}")
