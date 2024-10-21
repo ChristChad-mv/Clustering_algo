@@ -133,3 +133,18 @@ def show_group_of_points(group_per_centroids):
     print()
   print("---------------------------")
 
+"""
+@Params : group_per_centroids
+We need to have the whole group to determine the news centroids
+"""
+def find_news_centroids_after_grouping(group_per_centroids):
+  new_centroid = []
+  # The new centroid of each group is the center of the entire point in the group. For we have to iterate on each new group
+  for centroid_index, points in group_per_centroids.items():
+    if points: 
+      new_centroid_x = sum(x for x, _ in points) / len(points)
+      new_centroid_y = sum(y for _, y in points) / len(points)
+
+      new_centroid.append({ "x": new_centroid_x, "y": new_centroid_y })
+
+  return new_centroid
