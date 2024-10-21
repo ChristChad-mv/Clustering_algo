@@ -123,3 +123,13 @@ def grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized,
     print(f"A{i} is for the cluster {index_centroids_inf + 1}")
 
   return groups_per_centroids
+
+def show_group_of_points(group_per_centroids):
+  print("---------------------------")
+  for centroid_index, points in group_per_centroids:
+    print(f"Cluster {centroid_index + 1} : ")
+    for point in points : 
+      print(point)
+    print()
+  print("---------------------------")
+
