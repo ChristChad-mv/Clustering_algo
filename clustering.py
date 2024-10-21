@@ -90,3 +90,36 @@ And the function will return the eucliedian distance between these points
 """
 def calculate_euclidean_distance(x1, y1, x2, y2):
   return np.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+
+
+"""
+In this function, we want to group each point around his initial centroids
+So in params, we have the coordinates of points enter by the user but full normalized and also the new centroids
+New_centroids, This param allow us to know how many group, we'll have
+
+So we can create for each centroids the group
+"""
+def grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized, coord_y_normalized, new_centroids):
+  groups_per_centroids = {}
+
+  for i in range(len(new_centroids)):
+    groups_per_centroids[i] = []
+
+  # For each point normalized, we'll calculate the distance between each centroids and do some comparison
+  # And so we can affect the point in the group that it has the min euclidian distance
+  for i, x_norm in enumerate(coord_x_normalized, start=1):
+    y_norm = coord_y_normalized[i-1]
+    new_distances = []
+
+    for new_centroid in new_centroids:
+      new_distance = calculate_euclidean_distance(x_norm, y_norm, new_centroid["x"], new_centroid["y"])
+      new_distances.append(new_distance)
+
+    index_centroids_inf = np.argmin(new_distances)
+    groups_per_centroids[index_centroids_inf].append((x_norm, y_norm))
+
+    print()
+    print(new_distances)
+    print(f"A{i} is for the cluster {index_centroids_inf + 1}")
+
+  return groups_per_centroids
