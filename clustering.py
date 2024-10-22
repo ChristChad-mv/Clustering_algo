@@ -8,8 +8,8 @@ def main():
 
   # Collection of data, users will provide the data
 
-  numbers_of_points = int(input("Enter the numbers of points : "))
-  coordinates = data_collection(numbers_of_points)
+  number_of_points = int(input("Enter the numbers of points : "))
+  coordinates = data_collection(numbnumber_of_pointsers_of_points)
 
   # Displaying data
   print()
@@ -30,6 +30,32 @@ def main():
 
   print()
 
+  # We try to initialize the number of departure group. 
+  # We work on K means algorithm so we need to have how many group for our output
+  while True:
+    number_centroids = int(input("How many group do you want to start with ? : "))
+    if number_centroids > number_of_points: 
+      print(f"Invalid numbers of K group. This number must be less than {number_of_points}")
+    else : 
+      break
+
+  # Because the starting centroids is always among our points so... we can easly get them
+  centroids, centroids_norm = having_centroids(number_centroids, coord_x_normalized, coord_y_normalized, coordinates_x, coordinates_y):
+
+  print()
+  print("Initial centroids : ")
+  show_centroids(centroids)
+
+  print()
+  # We want to have the numbers of iterations because this will allow us to check if we have to stop or not
+  # Refers to how we can validate our algorithm.
+  number_of_iterations = int(input("Enter the number of iterations : "))
+  print("Iteration 1 :")
+
+  groups =  grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized, coord_y_normalized, centroids_norm)
+  show_group_of_points(groups)
+
+  
   
 
 
