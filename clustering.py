@@ -55,7 +55,26 @@ def main():
   groups =  grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized, coord_y_normalized, centroids_norm)
   show_group_of_points(groups)
 
-  
+  #========Iteration 2 ===========
+  for iteration in range(2, number_of_iterations + 1):
+    print(f"Iteration {iteration} : ")
+    print()
+    print("New centroids : ")
+    new_centroids = find_news_centroids_after_grouping(groups):
+    show_centroids(new_centroids)
+
+    groups = grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized, coord_y_normalized, new_centroids)
+    show_group_of_points(groups)
+    new_centroids = find_news_centroids_after_grouping(groups)
+    print()
+
+    # Some test for the end. When we finish the iteration, we can calcul the inertia of each group
+    print("Inertia intra class : ")
+    if iteration == number_of_iterations:
+      inertia_intra_class = calcul_of_inertia_intra_class(centroids_norm, groups)
+
+      for group, inertia in inertia_intra_class.items():
+        print(f"For {group + 1} : {inertia}")
   
 
 
