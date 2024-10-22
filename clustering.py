@@ -40,7 +40,7 @@ def main():
       break
 
   # Because the starting centroids is always among our points so... we can easly get them
-  centroids, centroids_norm = having_centroids(number_centroids, coord_x_normalized, coord_y_normalized, coordinates_x, coordinates_y):
+  centroids, centroids_norm = having_centroids(number_centroids, coord_x_normalized, coord_y_normalized, coordinates_x, coordinates_y)
 
   print()
   print("Initial centroids : ")
@@ -60,7 +60,7 @@ def main():
     print(f"Iteration {iteration} : ")
     print()
     print("New centroids : ")
-    new_centroids = find_news_centroids_after_grouping(groups):
+    new_centroids = find_news_centroids_after_grouping(groups)
     show_centroids(new_centroids)
 
     groups = grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized, coord_y_normalized, new_centroids)
