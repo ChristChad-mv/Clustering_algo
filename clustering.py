@@ -1,6 +1,31 @@
 import numpy as np
 from math import sqrt
 
+def main():
+  print("----------------------------------")
+  print("CLUSTERING : k-means Algorithm. ")
+  print("----------------------------------")
+
+  # Collection of data, users will provide the data
+
+  numbers_of_points = int(input("Enter the numbers of points : "))
+  coordinates = data_collection(numbers_of_points)
+
+  # Displaying data
+  print()
+  print(f"The coordinates of data collected : ")
+  for index, coordinate in enumerate(coordinates, start=1):
+    print(f"A{index}{coordinates['x'], coordinates['y']}")
+
+
+  coordinates_x, coordinates_y = extract_data(coordinates)
+  coord_x_normalized, coord_y_normalized = data_normalization(coordinates_x, coordinates_y)
+
+  print()
+
+  
+
+
 """
 @param : numbers_point -> This param allow user to set the number of point at the start
 This function allow the collection of points
