@@ -23,6 +23,13 @@ def main():
 
   print()
 
+  # display the normalized form of the data
+  print("The data after normalized : ")
+  for i in range(len(coord_x_normalized)):
+    print(f"A{i+1}({coord_x_normalized[i]}, {coord_y_normalized[i]})")
+
+  print()
+
   
 
 
