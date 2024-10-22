@@ -153,3 +153,23 @@ def find_news_centroids_after_grouping(group_per_centroids):
 def show_centroids(centroids_norm):
   for point, centroid in enumerate(centroids_norm):
     print(f"{centroid['x'], centroid['y']}")
+
+"""
+Here we can easly calculate the inertia or the center of each group
+What's we need here to this calcul, we need to have group and also the list of centroids
+"""
+def calcul_of_inertia_intra_class(centroids_norm, group_per_centroids):
+  inerties = {}
+
+  for centroids_index, centroids in enumerate(centroids_norm):
+    inertia_intra_class = 0
+    all_points_in_a_group = group_per_centroids[centroids_index]
+
+    for point in all_points_in_a_group:
+      x_norm, y_norm = point
+      distance = calculate_euclidean_distance(x_norm, y_norm, centroids['x'], centroids['y'])
+      inertia_intra_class += distance
+    inerties[centroids_index] = inertia_intra_class
+  
+  return inerties
+
