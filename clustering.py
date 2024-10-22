@@ -250,3 +250,5 @@ def calcul_of_inertia_intra_class(centroids_norm, group_per_centroids):
   
   return inerties
 
+if __name__ == "__main__":
+  main()
