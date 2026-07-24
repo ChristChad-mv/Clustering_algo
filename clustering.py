@@ -9,13 +9,13 @@ def main():
   # Collection of data, users will provide the data
 
   number_of_points = int(input("Enter the numbers of points : "))
-  coordinates = data_collection(numbnumber_of_pointsers_of_points)
+  coordinates = data_collection(number_of_points)
 
   # Displaying data
   print()
   print(f"The coordinates of data collected : ")
   for index, coordinate in enumerate(coordinates, start=1):
-    print(f"A{index}{coordinates['x'], coordinates['y']}")
+    print(f"A{index}({coordinate['x']}, {coordinate['y']})")
 
 
   coordinates_x, coordinates_y = extract_data(coordinates)
@@ -158,7 +158,7 @@ def having_centroids(number_of_centroids, coord_x_norm, coord_y_norm, coordinate
         # We use index - 1 because we want to have the correct coordinates of the points.
         # If the user enter 1 but we'll start the count by 0
         break
-    return centroids, centroids_norm
+  return centroids, centroids_norm
 
   
 """
@@ -203,7 +203,7 @@ def grouping_point_by_centroids_based_on_euclidiean_distance(coord_x_normalized,
 
 def show_group_of_points(group_per_centroids):
   print("---------------------------")
-  for centroid_index, points in group_per_centroids:
+  for centroid_index, points in group_per_centroids.items():
     print(f"Cluster {centroid_index + 1} : ")
     for point in points : 
       print(point)
